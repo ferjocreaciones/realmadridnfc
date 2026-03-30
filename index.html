@@ -266,6 +266,41 @@ body {
 
 <script>
 // AQUÍ PUEDES CAMBIAR A JUGADORES DEL REAL MADRID
+    
+const jugadores = {
+    agonzalez: {
+        nombre: "Cristiano Ronaldo",
+        numero: "7",
+        posicion: "DEL",
+        imagen: "tcr7.jpg",
+        premiumLinks: [
+            "https://www.instagram.com/hormiga_glez/?hl=es",
+            "https://www.youtube.com/watch?v=_KeN4BUrxl0&t=72s",
+            "https://www.google.com/search?q=armando+gonzalez+chivas+jugador+perfil+estadisticas"
+        ]
+};
+
+const params = new URLSearchParams(window.location.search);
+const jugador = params.get("jugador");
+
+if (jugadores[jugador]) {
+
+    // DATOS DE TARJETA
+    document.getElementById("player-name").innerText = jugadores[jugador].nombre;
+    document.getElementById("player-number").innerText = jugadores[jugador].numero;
+    document.getElementById("player-position").innerText = jugadores[jugador].posicion;
+    document.getElementById("player-img").src = jugadores[jugador].imagen;
+
+    // 🔥 BOTONES PREMIUM (AQUÍ VA, NO ANTES)
+    document.getElementById("btn-premium-1").href = jugadores[jugador].premiumLinks[0];
+    document.getElementById("btn-premium-2").href = jugadores[jugador].premiumLinks[1];
+    document.getElementById("btn-premium-3").href = jugadores[jugador].premiumLinks[2];
+
+} else {
+    document.getElementById("player-name").innerText = "Chivas";
+    document.getElementById("player-number").innerText = "🔥";
+}
+
 </script>
 
 </body>
