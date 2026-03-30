@@ -91,6 +91,24 @@ body {
     border-radius: 8px;
 }
 
+.top-img {
+    width: 120px;
+    margin: 20px auto 10px;
+    display: block;
+}
+
+.player-name {
+    font-size: 26px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.player-number {
+    font-size: 60px;
+    font-weight: bold;
+    color: #FFD700;
+}
+
 /* BOTONES */
 .btn {
     display: block;
@@ -197,6 +215,9 @@ body {
 
 <div class="container">
 
+<img src="logo.png" class="top-img">
+    <div class="player-name" id="player-name">Jugador</div>
+    <div class="player-number" id="player-number">7</div>
 <div class="card-fc">
     <div class="card-bg"></div>
     <img id="player-img" class="card-player" src="">
@@ -265,19 +286,29 @@ body {
 </div>
 
 <script>
-// AQUÍ PUEDES CAMBIAR A JUGADORES DEL REAL MADRID
-    
 const jugadores = {
-    agonzalez: {
-        nombre: "Cristiano Ronaldo",
+    bellingham: {
+        nombre: "Jude Bellingham",
+        numero: "5",
+        posicion: "MED",
+        imagen: "bellingham.jpg",
+        links: [
+            "https://www.instagram.com/judebellingham/",
+            "https://www.youtube.com/results?search_query=bellingham+goals",
+            "https://www.google.com/search?q=jude+bellingham+estadisticas"
+        ]
+    },
+    vinicius: {
+        nombre: "Vinicius Jr",
         numero: "7",
         posicion: "DEL",
-        imagen: "tcr7.jpg",
-        premiumLinks: [
-            "https://www.instagram.com/hormiga_glez/?hl=es",
-            "https://www.youtube.com/watch?v=_KeN4BUrxl0&t=72s",
-            "https://www.google.com/search?q=armando+gonzalez+chivas+jugador+perfil+estadisticas"
+        imagen: "vinicius.jpg",
+        links: [
+            "https://www.instagram.com/vinijr/",
+            "https://www.youtube.com/results?search_query=vinicius+goals",
+            "https://www.google.com/search?q=vinicius+estadisticas"
         ]
+    }
 };
 
 const params = new URLSearchParams(window.location.search);
@@ -285,22 +316,19 @@ const jugador = params.get("jugador");
 
 if (jugadores[jugador]) {
 
-    // DATOS DE TARJETA
     document.getElementById("player-name").innerText = jugadores[jugador].nombre;
     document.getElementById("player-number").innerText = jugadores[jugador].numero;
     document.getElementById("player-position").innerText = jugadores[jugador].posicion;
     document.getElementById("player-img").src = jugadores[jugador].imagen;
 
-    // 🔥 BOTONES PREMIUM (AQUÍ VA, NO ANTES)
-    document.getElementById("btn-premium-1").href = jugadores[jugador].premiumLinks[0];
-    document.getElementById("btn-premium-2").href = jugadores[jugador].premiumLinks[1];
-    document.getElementById("btn-premium-3").href = jugadores[jugador].premiumLinks[2];
+    document.getElementById("btn-premium-1").href = jugadores[jugador].links[0];
+    document.getElementById("btn-premium-2").href = jugadores[jugador].links[1];
+    document.getElementById("btn-premium-3").href = jugadores[jugador].links[2];
 
 } else {
-    document.getElementById("player-name").innerText = "Chivas";
-    document.getElementById("player-number").innerText = "🔥";
+    document.getElementById("player-name").innerText = "Real Madrid";
+    document.getElementById("player-number").innerText = "⚽";
 }
-
 </script>
 
 </body>
