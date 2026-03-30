@@ -18,14 +18,7 @@ body {
     padding: 20px;
 }
 
-.card {
-    background: linear-gradient(145deg, #ffffff, #0b1d3a);
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
-}
-
-/* JUGADOR */
+/* TARJETA */
 .card-fc {
     position: relative;
     width: 90%;
@@ -48,20 +41,19 @@ body {
     z-index: 1;
 }
 
-/* JUGADOR */
+/* IMAGEN PRINCIPAL */
 .card-player {
     position: absolute;
-    bottom: 80px;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 85%;
-    max-height: 320px;
+    width: 80%;
+    max-height: 300px;
     object-fit: contain;
     z-index: 2;
-    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
 }
 
-/* INFO */
+/* INFO ABAJO */
 .card-info {
     position: absolute;
     bottom: 0;
@@ -89,24 +81,6 @@ body {
     background: rgba(255,255,255,0.2);
     padding: 4px 10px;
     border-radius: 8px;
-}
-
-.top-img {
-    width: 120px;
-    margin: 20px auto 10px;
-    display: block;
-}
-
-.player-name {
-    font-size: 26px;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.player-number {
-    font-size: 60px;
-    font-weight: bold;
-    color: #FFD700;
 }
 
 /* BOTONES */
@@ -191,22 +165,10 @@ body {
 .separador {
     width: 100%;
     height: 8px;
-    background: linear-gradient(
-        90deg,
-        #FFD700,
-        #ffffff,
-        #0b1d3a
-    );
+    background: linear-gradient(90deg, #FFD700, #ffffff, #0b1d3a);
     margin: 25px 0;
     border-radius: 4px;
     box-shadow: 0 0 10px rgba(255,215,0,0.5);
-}
-
-@media (min-width: 768px) {
-    .container {
-        max-width: 600px;
-        margin: auto;
-    }
 }
 </style>
 </head>
@@ -215,15 +177,16 @@ body {
 
 <div class="container">
 
-
+<!-- TARJETA -->
 <div class="card-fc">
     <div class="card-bg"></div>    
-    <div class="player-name" id="player-name">Cristiano Ronaldo</div>
-    <div class="player-number" id="player-number"></div>
+
+    <img src="tcr7.jpg" id="player-img" class="card-player">
+
     <div class="card-info">
-        <div id="player-name" class="card-name"></div>
+        <div class="card-name" id="player-name">Cristiano Ronaldo</div>
+
         <div class="card-details">
-            <img src="tcr7.jpg" class="top-img">
             <span id="player-position">DEL</span>
             <span id="player-number">7</span>
         </div>
@@ -239,65 +202,27 @@ body {
 
 <div class="separador"></div>
 
-<a class="btn" href="https://www.realmadrid.com" target="_blank">
-🌐 Sitio Oficial
-</a>
-
-<a class="btn" href="https://www.youtube.com/@realmadrid" target="_blank">
-▶️ YouTube Oficial
-</a>
-
-<a class="btn" href="https://www.instagram.com/realmadrid/" target="_blank">
-📸 Instagram Oficial
-</a>
-
-<a class="btn" href="https://www.realmadrid.com/entradas" target="_blank">
-🎟️ Boletos
-</a>
-
-<a class="btn" href="https://shop.realmadrid.com/" target="_blank">
-🛒 Tienda Oficial
-</a>
+<a class="btn" href="https://www.realmadrid.com" target="_blank">🌐 Sitio Oficial</a>
+<a class="btn" href="https://www.youtube.com/@realmadrid" target="_blank">▶️ YouTube Oficial</a>
+<a class="btn" href="https://www.instagram.com/realmadrid/" target="_blank">📸 Instagram Oficial</a>
+<a class="btn" href="https://www.realmadrid.com/entradas" target="_blank">🎟️ Boletos</a>
+<a class="btn" href="https://shop.realmadrid.com/" target="_blank">🛒 Tienda Oficial</a>
 
 <div class="separador"></div>
 
-<a class="btn" href="https://www.google.com/search?q=real+madrid+proximo+partido" target="_blank">
-📅 Próximo Partido
-</a>
-
-<a class="btn" href="https://www.google.com/search?q=real+madrid+calendario" target="_blank">
-🗓️ Calendario
-</a>
-
-<a class="btn" href="https://www.google.com/search?q=tabla+la+liga" target="_blank">
-📊 Tabla La Liga
-</a>
+<a class="btn" href="https://www.google.com/search?q=real+madrid+proximo+partido" target="_blank">📅 Próximo Partido</a>
+<a class="btn" href="https://www.google.com/search?q=real+madrid+calendario" target="_blank">🗓️ Calendario</a>
+<a class="btn" href="https://www.google.com/search?q=tabla+la+liga" target="_blank">📊 Tabla La Liga</a>
 
 <div class="separador"></div>
 
-<a class="btn" href="https://www.google.com/search?q=palmares+real+madrid" target="_blank">
-🏆 Palmarés
-</a>
-
-<a class="btn" href="https://www.google.com/search?q=real+madrid+vs+barcelona+historial" target="_blank">
-⚔️ El Clásico
-</a>
+<a class="btn" href="https://www.google.com/search?q=palmares+real+madrid" target="_blank">🏆 Palmarés</a>
+<a class="btn" href="https://www.google.com/search?q=real+madrid+vs+barcelona+historial" target="_blank">⚔️ El Clásico</a>
 
 </div>
 
 <script>
 const jugadores = {
-    bellingham: {
-        nombre: "Jude Bellingham",
-        numero: "5",
-        posicion: "MED",
-        imagen: "bellingham.jpg",
-        links: [
-            "https://www.instagram.com/judebellingham/",
-            "https://www.youtube.com/results?search_query=bellingham+goals",
-            "https://www.google.com/search?q=jude+bellingham+estadisticas"
-        ]
-    },
     vinicius: {
         nombre: "Vinicius Jr",
         numero: "7",
@@ -308,6 +233,17 @@ const jugadores = {
             "https://www.youtube.com/results?search_query=vinicius+goals",
             "https://www.google.com/search?q=vinicius+estadisticas"
         ]
+    },
+    bellingham: {
+        nombre: "Jude Bellingham",
+        numero: "5",
+        posicion: "MED",
+        imagen: "bellingham.jpg",
+        links: [
+            "https://www.instagram.com/judebellingham/",
+            "https://www.youtube.com/results?search_query=bellingham+goals",
+            "https://www.google.com/search?q=jude+bellingham+estadisticas"
+        ]
     }
 };
 
@@ -315,7 +251,6 @@ const params = new URLSearchParams(window.location.search);
 const jugador = params.get("jugador");
 
 if (jugadores[jugador]) {
-
     document.getElementById("player-name").innerText = jugadores[jugador].nombre;
     document.getElementById("player-number").innerText = jugadores[jugador].numero;
     document.getElementById("player-position").innerText = jugadores[jugador].posicion;
@@ -324,10 +259,6 @@ if (jugadores[jugador]) {
     document.getElementById("btn-premium-1").href = jugadores[jugador].links[0];
     document.getElementById("btn-premium-2").href = jugadores[jugador].links[1];
     document.getElementById("btn-premium-3").href = jugadores[jugador].links[2];
-
-} else {
-    document.getElementById("player-name").innerText = "Real Madrid";
-    document.getElementById("player-number").innerText = "⚽";
 }
 </script>
 
